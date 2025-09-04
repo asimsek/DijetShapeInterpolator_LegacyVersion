@@ -1,5 +1,4 @@
 # Legacy Interpolator for the Dijet Resonance Shapes
-## Run 3
 
 These scripts are designed to run within the CMS software environment (CMSSW) on lxplus.
 
@@ -45,7 +44,7 @@ python3 addSignalShapes.py -l inputLists/inputShapes_RSGToQQ_kMpl01.txt -b Signa
 python3 extractShapes.py -l inputLists/inputShapes_RSGToQQ_kMpl01.txt -b SignalShapes
 ```
 
-## Interpolate shapes
+### Interpolate shapes
 
 ```bash
 python3 getResonanceShapes.py -l inputLists/inputShapes_RSGToQQ_kMpl01.txt -b SignalShapes --step 100 --fineBinning
