@@ -1,4 +1,5 @@
-# Legacy Interpolator for the Dijet Resonance Shapes (Run 3)
+# Legacy Interpolator for the Dijet Resonance Shapes
+## Run 3
 
 These scripts are designed to run within the CMS software environment (CMSSW) on lxplus.
 
@@ -26,25 +27,25 @@ These scripts are designed to run within the CMS software environment (CMSSW) on
 
 ## Usage
 
-### 1) Convert mjj distributions into a uniform ratio format
+### Convert mjj distribution into a proper format
 
 ```bash
 python3 dijetRatio_mjj.py -l inputLists/inputShapes_RSGToQQ_kMpl01.txt -o SignalShapes
 ```
 
-### 2) Merge all formatted shapes into one ROOT per group
+### Merge all formatted shapes into one root file
 
 ```bash
 python3 addSignalShapes.py -l inputLists/inputShapes_RSGToQQ_kMpl01.txt -b SignalShapes -t nom
 ```
 
-### 3) Extract shapes from the merged ROOT into a small Python module
+### Extract shapes from root file into a small Python module
 
 ```bash
 python3 extractShapes.py -l inputLists/inputShapes_RSGToQQ_kMpl01.txt -b SignalShapes
 ```
 
-### 4) Interpolate shapes on a mass grid
+## Interpolate shapes
 
 ```bash
 python3 getResonanceShapes.py -l inputLists/inputShapes_RSGToQQ_kMpl01.txt -b SignalShapes --step 100 --fineBinning
