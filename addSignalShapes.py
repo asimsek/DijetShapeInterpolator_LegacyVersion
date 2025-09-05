@@ -52,6 +52,7 @@ def find_root_files_top_level(inputdir):
 def parse_mass_from_filename(path):
     try:
         base = os.path.basename(path)
+        base = base.replace("-", "_")
         part = base.split("_M_")[-1]
         mass_str = part.split("_")[0]
         return int(mass_str)
