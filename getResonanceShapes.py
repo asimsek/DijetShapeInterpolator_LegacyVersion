@@ -114,6 +114,7 @@ def LineShapePDF(shapes, mass, histo):
     integral = histo.Integral()
     if integral > 0:
         histo.Scale(1. / integral)
+        histo.Sumw2(False)
 
 
 
